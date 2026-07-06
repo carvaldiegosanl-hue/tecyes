@@ -58,6 +58,19 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿La cotización tiene algún costo?", "acceptedAnswer": { "@type": "Answer", "text": "No. Cotizamos gratis y sin compromiso. En menos de 24 horas recibes una cotización formal con alcance, condiciones y precio." } },
+    { "@type": "Question", "name": "¿Dónde prestan los servicios?", "acceptedAnswer": { "@type": "Answer", "text": "Atendemos empresas, bodegas, plantas industriales y conjuntos residenciales en Colombia." } },
+    { "@type": "Question", "name": "¿Qué marcas de PLC y equipos manejan?", "acceptedAnswer": { "@type": "Answer", "text": "Programamos y damos soporte a PLC Siemens, Omron y Schneider, desarrollamos sistemas SCADA/HMI y hacemos repotenciación (retrofit) de maquinaria y CNC." } },
+    { "@type": "Question", "name": "¿Emiten factura y manejan contratos?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Emitimos factura electrónica y trabajamos con contratos y órdenes de servicio documentadas, con firma y evidencia fotográfica de cada trabajo." } },
+    { "@type": "Question", "name": "¿Cómo funcionan los planes de soporte mensual?", "acceptedAnswer": { "@type": "Answer", "text": "Plan Básico: soporte remoto y una visita mensual. Plan Completo: visitas presenciales, mantenimiento preventivo y atención prioritaria. Ambos incluyen reporte mensual." } }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -175,6 +188,16 @@ section{padding:80px 24px;}
 .form-msg.error{color:var(--accent-light);}
 .hp-field{position:absolute;left:-9999px;}
 
+/* FAQ */
+.faq{background:var(--bg2);}
+.faq-list{max-width:760px;}
+.faq details{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;}
+.faq summary{cursor:pointer;padding:18px 20px;font-size:15px;font-weight:700;color:var(--primary);list-style:none;position:relative;padding-right:44px;}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{content:'+';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:400;color:var(--accent);transition:transform .2s;}
+.faq details[open] summary::after{content:'−';}
+.faq details p{padding:0 20px 18px;font-size:14px;color:var(--text2);line-height:1.7;}
+
 /* FOOTER */
 footer{background:var(--primary);padding:32px 24px;text-align:center;border-top:1px solid rgba(255,255,255,.06);}
 footer p{font-size:13px;color:rgba(255,255,255,.3);}
@@ -232,7 +255,7 @@ footer p{font-size:13px;color:rgba(255,255,255,.3);}
     <div class="nav-links" id="navLinks">
       <a href="#servicios">Servicios</a>
       <a href="#proceso">Proceso</a>
-      <a href="#contacto" class="nav-cta">Cotizar ahora</a>
+      <a href="#contacto" class="nav-cta">Cotización gratis</a>
     </div>
   </div>
 </nav>
@@ -240,11 +263,11 @@ footer p{font-size:13px;color:rgba(255,255,255,.3);}
 <section class="hero">
   <div class="hero-content">
     <div class="hero-badge">Para empresas y conjuntos residenciales</div>
-    <h1>Soluciones integrales de <em>automatización industrial, tecnología y seguridad</em> para empresas y conjuntos residenciales</h1>
-    <p>Programamos PLC, modernizamos maquinaria, instalamos CCTV y redes, y damos soporte mensual a bodegas, plantas industriales y conjuntos residenciales en Colombia.</p>
+    <h1>Tu planta más productiva. Tu conjunto más seguro. <em>Un solo aliado: TECYES</em></h1>
+    <p>Modernizamos tu maquinaria, protegemos tus instalaciones con CCTV y mantenemos tu operación funcionando sin interrupciones. Atendemos bodegas, plantas industriales y conjuntos residenciales en toda Colombia.</p>
     <div class="hero-btns">
-      <a href="#contacto" class="btn-primary">Agenda tu diagnóstico</a>
-      <a href="#servicios" class="btn-secondary">Ver servicios</a>
+      <a href="#contacto" class="btn-primary">Cotiza gratis en 24 horas</a>
+      <a href="#servicios" class="btn-secondary">Descubre lo que hacemos</a>
     </div>
   </div>
 </section>
@@ -261,8 +284,8 @@ footer p{font-size:13px;color:rgba(255,255,255,.3);}
 <section class="problem" id="problema">
   <div class="section-inner">
     <div class="section-tag">El problema</div>
-    <h2 class="section-title">Tu empresa o conjunto pierde tiempo y dinero con proveedores desorganizados</h2>
-    <p class="section-sub">Las empresas y conjuntos residenciales necesitan proveedores confiables que resuelvan, no que generen más problemas.</p>
+    <h2 class="section-title">¿Cuánto dinero te está costando un proveedor que no responde?</h2>
+    <p class="section-sub">Cada hora de máquina parada, cada cámara dañada y cada cotización que nunca llega es plata que se va. Nosotros resolvemos, documentamos y respondemos. Tú solo apruebas.</p>
     <div class="problem-grid">
       <div class="problem-card">
         <div class="problem-icon">&#128260;</div>
@@ -286,82 +309,82 @@ footer p{font-size:13px;color:rgba(255,255,255,.3);}
 <section id="servicios">
   <div class="section-inner">
     <div class="section-tag">Servicios</div>
-    <h2 class="section-title">Todo lo que tu operación necesita, en un solo proveedor</h2>
-    <p class="section-sub">Desde programar el PLC de tu planta hasta la limpieza de tus instalaciones. Cotización, ejecución y facturación con trazabilidad digital completa.</p>
+    <h2 class="section-title">Un solo proveedor. Cero excusas. Resultados que se ven.</h2>
+    <p class="section-sub">Desde programar el PLC de tu planta hasta dejar tus instalaciones impecables. Todo cotizado, ejecutado y facturado con trazabilidad digital completa.</p>
     <div class="services-grid">
       <div class="service-card featured">
         <div class="service-badge">Nuestra especialidad</div>
         <div class="service-img"><img src="serv-automatizacion.jpg" alt="Técnicos en cuarto de control industrial" loading="lazy"></div>
         <h3>Automatización Industrial</h3>
-        <div class="service-desc">Modernizamos y automatizamos máquinas y procesos de planta.</div>
+        <div class="service-desc">Convierte tu planta en una máquina de producir: tus equipos rinden más y fallan menos.</div>
         <ul class="service-list">
           <li>Programación de PLC: Siemens, Omron y Schneider</li>
           <li>Sistemas SCADA / HMI para monitoreo de planta</li>
           <li>Repotenciación (retrofit) de maquinaria y CNC</li>
           <li>Instrumentación industrial y planos eléctricos (AutoCAD Electrical)</li>
         </ul>
-        <a href="#contacto" class="service-cta">Cotizar</a>
+        <a href="https://wa.me/573148319544?text=Hola%2C%20quiero%20cotizar%20Automatizaci%C3%B3n%20Industrial%20con%20TECYES." target="_blank" rel="noopener" class="service-cta">Quiero cotizar</a>
       </div>
       <div class="service-card">
         <div class="service-badge">Más solicitado</div>
         <div class="service-img"><img src="serv-tecnologia.jpg" alt="Técnico instalando cámara de seguridad" loading="lazy"></div>
         <h3>Seguridad Electrónica</h3>
-        <div class="service-desc">Vigilancia y control de acceso para empresas y conjuntos residenciales.</div>
+        <div class="service-desc">Duerme tranquilo: tu empresa o conjunto vigilado 24/7 desde la palma de tu mano.</div>
         <ul class="service-list">
           <li>Paquetes CCTV: 4 u 8 cámaras IP + DVR instalados</li>
           <li>Visualización remota desde el celular</li>
           <li>Control de acceso vehicular (talanqueras)</li>
           <li>Mantenimiento preventivo de CCTV</li>
         </ul>
-        <a href="#contacto" class="service-cta">Cotizar</a>
+        <a href="https://wa.me/573148319544?text=Hola%2C%20quiero%20cotizar%20c%C3%A1maras%20de%20seguridad%20%2F%20CCTV%20con%20TECYES." target="_blank" rel="noopener" class="service-cta">Quiero cotizar</a>
       </div>
       <div class="service-card">
         <div class="service-img"><img src="serv-infraestructura.jpg" alt="Técnico revisando rack de servidores" loading="lazy"></div>
         <h3>Tecnología e Infraestructura</h3>
-        <div class="service-desc">Infraestructura tecnológica para tu operación diaria.</div>
+        <div class="service-desc">Una operación conectada, sin caídas y con control total de tu inventario.</div>
         <ul class="service-list">
           <li>Redes y cableado estructurado certificado</li>
           <li>Integración de la tecnología que ya tienes</li>
           <li>Inventario y trazabilidad con códigos y lectores</li>
           <li>Diagnóstico tecnológico con informe y presupuesto</li>
         </ul>
-        <a href="#contacto" class="service-cta">Cotizar</a>
+        <a href="https://wa.me/573148319544?text=Hola%2C%20quiero%20cotizar%20redes%20o%20infraestructura%20tecnol%C3%B3gica%20con%20TECYES." target="_blank" rel="noopener" class="service-cta">Quiero cotizar</a>
       </div>
       <div class="service-card">
         <div class="service-img"><img src="serv-soporte.jpg" alt="Soporte y monitoreo en sala de servidores" loading="lazy"></div>
         <h3>Soporte Mensual</h3>
-        <div class="service-desc">Planes recurrentes con atención prioritaria.</div>
+        <div class="service-desc">Olvídate de las emergencias: prevenimos las fallas antes de que te cuesten dinero.</div>
         <ul class="service-list">
           <li>Plan Básico: soporte remoto + 1 visita mensual</li>
           <li>Plan Completo: visitas + preventivo + prioridad</li>
           <li>Mantenimiento de sistemas de automatización y PLC</li>
           <li>Reporte mensual de estado</li>
         </ul>
-        <a href="#contacto" class="service-cta">Cotizar</a>
+        <a href="https://wa.me/573148319544?text=Hola%2C%20quiero%20informaci%C3%B3n%20de%20los%20planes%20de%20Soporte%20Mensual%20de%20TECYES." target="_blank" rel="noopener" class="service-cta">Quiero cotizar</a>
       </div>
       <div class="service-card">
         <div class="service-img"><img src="serv-consultoria.jpg" alt="Asesoría en transformación digital" loading="lazy"></div>
         <h3>Consultoría en Transformación Digital</h3>
-        <div class="service-desc">Digitaliza tu pyme con un plan priorizado por impacto y costo.</div>
+        <div class="service-desc">Digitaliza tu pyme sin gastar de más: un plan claro, priorizado por impacto y costo.</div>
         <ul class="service-list">
           <li>Evaluación de los procesos de tu empresa</li>
           <li>Plan de digitalización priorizado</li>
           <li>Recomendación de herramientas concretas</li>
           <li>Acompañamiento en la implementación</li>
         </ul>
-        <a href="#contacto" class="service-cta">Cotizar</a>
+        <a href="https://wa.me/573148319544?text=Hola%2C%20quiero%20cotizar%20una%20Consultor%C3%ADa%20en%20Transformaci%C3%B3n%20Digital%20con%20TECYES." target="_blank" rel="noopener" class="service-cta">Quiero cotizar</a>
       </div>
       <div class="service-card">
         <div class="service-img"><img src="serv-limpieza.jpg" alt="Personal de limpieza en bodega industrial" loading="lazy"></div>
         <h3>Limpieza</h3>
-        <div class="service-desc">Limpieza profesional para bodegas, plantas y zonas comunes.</div>
+        <div class="service-desc">Instalaciones impecables que hablan bien de tu empresa, todos los días.</div>
         <ul class="service-list">
           <li>Limpieza industrial de bodegas</li>
           <li>Limpieza de áreas operativas y administrativas</li>
           <li>Limpieza de zonas comunes en conjuntos residenciales</li>
           <li>Limpieza post-obra y post-mantenimiento</li>
         </ul>
-        <a href="#contacto" class="service-cta">Cotizar</a>
+        <a href="https://wa.me/573148319544?text=Hola%2C%20quiero%20cotizar%20servicios%20de%20Limpieza%20con%20TECYES." target="_blank" rel="noopener" class="service-cta">Quiero cotizar</a>
       </div>
     </div>
   </div>
@@ -370,8 +393,8 @@ footer p{font-size:13px;color:rgba(255,255,255,.3);}
 <section class="process" id="proceso">
   <div class="section-inner">
     <div class="section-tag">Proceso</div>
-    <h2 class="section-title">Cómo trabajamos</h2>
-    <p class="section-sub">Un flujo claro desde tu primer contacto hasta la entrega con factura. Todo documentado.</p>
+    <h2 class="section-title">Así de fácil es trabajar con nosotros</h2>
+    <p class="section-sub">Sin vueltas y sin papeleo perdido: cada paso queda documentado y tú siempre sabes en qué va tu servicio.</p>
     <div class="process-steps">
       <div class="step">
         <div class="step-num">1</div>
@@ -397,13 +420,43 @@ footer p{font-size:13px;color:rgba(255,255,255,.3);}
   </div>
 </section>
 
+<section id="garantias">
+  <div class="section-inner">
+    <div class="section-tag">Por qué TECYES</div>
+    <h2 class="section-title">Contratar con nosotros es contratar tranquilidad</h2>
+    <p class="section-sub">No te pedimos que confíes en promesas: así respaldamos cada servicio que prestamos.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-icon">&#9889;</div>
+        <h3>Cotización en 24 horas</h3>
+        <p>Recibes una cotización formal con alcance y condiciones en menos de un día. Gratis y sin compromiso.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">&#128248;</div>
+        <h3>Evidencia de cada trabajo</h3>
+        <p>Toda orden de servicio se cierra con firma del cliente y registro fotográfico. Sabes exactamente qué se hizo y cuándo.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">&#129534;</div>
+        <h3>Facturación formal</h3>
+        <p>Empresa legalmente constituida: factura electrónica, contratos claros y soporte de cada pago.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">&#128241;</div>
+        <h3>Un solo contacto para todo</h3>
+        <p>Automatización, seguridad, redes y limpieza con un mismo responsable que da la cara. Se acabó perseguir proveedores.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta-section" id="contacto">
-  <h2>¿Necesitas un servicio para tu empresa o conjunto?</h2>
-  <p>Escríbenos y te enviamos una cotización formal en menos de 24 horas, o agenda un diagnóstico tecnológico de tu operación. Sin compromiso.</p>
+  <h2>Tu operación no puede esperar. Nosotros tampoco.</h2>
+  <p>Cuéntanos qué necesitas y recibe una cotización formal en menos de 24 horas. Gratis, sin compromiso y sin letra pequeña.</p>
   <div class="cta-btns">
     <a href="https://wa.me/573148319544?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20TECYES%20y%20necesito%20cotizar%20un%20servicio%20para%20mi%20empresa%20o%20conjunto." class="btn-whatsapp">
       <svg viewBox="0 0 24 24" width="22" height="22"><path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Escribir por WhatsApp
+      Cotiza ya por WhatsApp
     </a>
   </div>
   <div class="contact-form-card">
@@ -428,9 +481,38 @@ footer p{font-size:13px;color:rgba(255,255,255,.3);}
         </select>
       </div>
       <textarea name="mensaje" placeholder="Cuéntanos qué necesitas..." aria-label="Mensaje" rows="4" required></textarea>
-      <button type="submit">Enviar mensaje</button>
+      <button type="submit">Quiero mi cotización gratis</button>
       <p class="form-msg" id="formMsg"></p>
     </form>
+  </div>
+</section>
+
+<section class="faq" id="preguntas">
+  <div class="section-inner">
+    <div class="section-tag">Preguntas frecuentes</div>
+    <h2 class="section-title">Lo que todos nos preguntan antes de contratar</h2>
+    <div class="faq-list">
+      <details>
+        <summary>¿La cotización tiene algún costo?</summary>
+        <p>No. Cotizamos gratis y sin compromiso. Nos cuentas qué necesitas por WhatsApp, correo o el formulario, y en menos de 24 horas recibes una cotización formal con alcance, condiciones y precio.</p>
+      </details>
+      <details>
+        <summary>¿Dónde prestan los servicios?</summary>
+        <p>Atendemos empresas, bodegas, plantas industriales y conjuntos residenciales en Colombia. Escríbenos con tu ciudad y te confirmamos disponibilidad de inmediato.</p>
+      </details>
+      <details>
+        <summary>¿Qué marcas de PLC y equipos manejan?</summary>
+        <p>Programamos y damos soporte a PLC Siemens, Omron y Schneider, desarrollamos sistemas SCADA/HMI y hacemos repotenciación (retrofit) de maquinaria y CNC. También elaboramos planos eléctricos en AutoCAD Electrical.</p>
+      </details>
+      <details>
+        <summary>¿Emiten factura y manejan contratos?</summary>
+        <p>Sí. Somos una empresa legalmente constituida: emitimos factura electrónica y trabajamos con contratos y órdenes de servicio documentadas, con firma y evidencia fotográfica de cada trabajo.</p>
+      </details>
+      <details>
+        <summary>¿Cómo funcionan los planes de soporte mensual?</summary>
+        <p>Tenemos un plan Básico (soporte remoto + una visita mensual) y un plan Completo (visitas presenciales, mantenimiento preventivo y atención prioritaria). Ambos incluyen reporte mensual del estado de tus equipos.</p>
+      </details>
+    </div>
   </div>
 </section>
 
@@ -501,7 +583,7 @@ footer p{font-size:13px;color:rgba(255,255,255,.3);}
       })
       .finally(function(){
         btn.disabled=false;
-        btn.textContent='Enviar mensaje';
+        btn.textContent='Quiero mi cotización gratis';
       });
   });
 })();
