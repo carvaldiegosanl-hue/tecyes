@@ -55,6 +55,20 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿La cotización tiene algún costo?", "acceptedAnswer": { "@type": "Answer", "text": "No. Evaluamos tu necesidad y te enviamos una cotización formal con alcance y condiciones en menos de 24 horas, sin costo y sin compromiso." } },
+    { "@type": "Question", "name": "¿Atienden solo empresas o también personas naturales?", "acceptedAnswer": { "@type": "Answer", "text": "Atendemos empresas, conjuntos residenciales y personas naturales. El proceso es el mismo: cotización formal, orden de servicio y entrega documentada." } },
+    { "@type": "Question", "name": "¿En qué zonas prestan sus servicios?", "acceptedAnswer": { "@type": "Answer", "text": "Prestamos servicios en Colombia: bodegas, puertos, plantas industriales, conjuntos residenciales, parqueaderos y más. Escríbenos con tu ubicación y te confirmamos la disponibilidad para tu zona." } },
+    { "@type": "Question", "name": "¿Emiten factura?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Todo servicio termina con entrega firmada, evidencia fotográfica y factura. La trazabilidad de tu servicio queda documentada de principio a fin." } },
+    { "@type": "Question", "name": "¿Cómo queda documentado el servicio?", "acceptedAnswer": { "@type": "Answer", "text": "Cada trabajo se ejecuta con una orden de servicio que registra el técnico asignado, la fecha y la dirección. Al finalizar recibes la entrega con firma y evidencia fotográfica." } },
+    { "@type": "Question", "name": "¿Ofrecen mantenimiento recurrente?", "acceptedAnswer": { "@type": "Answer", "text": "Sí, con la línea de Soporte Mensual: mantenimiento programado, visitas preventivas periódicas, soporte prioritario y un reporte mensual de estado." } }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -158,6 +172,16 @@ section{padding:80px 24px;}
 .step h3{font-size:15px;font-weight:700;margin-bottom:8px;}
 .step p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;}
 
+/* FAQ */
+.faq-list{max-width:760px;display:flex;flex-direction:column;gap:12px;}
+.faq-list details{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color .2s;}
+.faq-list details[open]{border-color:var(--accent);}
+.faq-list summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;font-size:15px;font-weight:600;color:var(--text);}
+.faq-list summary::-webkit-details-marker{display:none;}
+.faq-list summary::after{content:'+';flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--bg3);color:var(--text2);font-size:17px;font-weight:500;display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s,color .2s;}
+.faq-list details[open] summary::after{content:'−';background:var(--accent);color:#fff;}
+.faq-list details p{padding:0 22px 20px;font-size:14px;color:var(--text2);line-height:1.7;max-width:65ch;}
+
 /* CTA */
 .cta-section{background:linear-gradient(135deg,var(--primary) 0%,#0a2647 100%);padding:80px 24px;text-align:center;}
 .cta-section h2{font-size:clamp(26px,4vw,40px);font-weight:800;color:#fff;margin-bottom:14px;}
@@ -165,6 +189,9 @@ section{padding:80px 24px;}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
 .btn-whatsapp{background:#25D366;color:#fff;padding:16px 36px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:all .2s;}
 .btn-whatsapp:hover{background:#20BD5A;transform:translateY(-2px);}
+.cta-phone{margin-top:18px;font-size:14px;color:rgba(255,255,255,.55);}
+.cta-phone a{color:#fff;font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:1px;transition:border-color .2s;}
+.cta-phone a:hover{border-color:#fff;}
 .contact-form-card{max-width:520px;margin:40px auto 0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-lg);padding:32px;text-align:left;}
 .form-row{display:flex;gap:12px;}
 #contactForm input,#contactForm select,#contactForm textarea{width:100%;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05);color:#fff;font-family:inherit;font-size:14px;margin-bottom:12px;}
@@ -184,6 +211,9 @@ section{padding:80px 24px;}
 /* FOOTER */
 footer{background:var(--primary);padding:32px 24px;text-align:center;border-top:1px solid rgba(255,255,255,.06);}
 footer p{font-size:13px;color:rgba(255,255,255,.3);}
+.footer-contact{margin-top:6px;}
+.footer-contact a{color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s;}
+.footer-contact a:hover{color:#fff;}
 .footer-social{display:flex;justify-content:center;gap:12px;margin-bottom:18px;}
 .footer-social a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;transition:background .2s;}
 .footer-social a:hover{background:rgba(255,255,255,.14);}
@@ -238,6 +268,7 @@ footer p{font-size:13px;color:rgba(255,255,255,.3);}
     <div class="nav-links" id="navLinks">
       <a href="#servicios">Servicios</a>
       <a href="#proceso">Proceso</a>
+      <a href="#preguntas">Preguntas</a>
       <a href="#contacto" class="nav-cta">Cotizar ahora</a>
     </div>
   </div>
@@ -258,7 +289,7 @@ footer p{font-size:13px;color:rgba(255,255,255,.3);}
 <div class="stats">
   <div class="stats-inner">
     <div><div class="stat-num">3</div><div class="stat-lbl">Líneas de servicio</div></div>
-    <div><div class="stat-num">70<span>%</span></div><div class="stat-lbl">Margen operativo meta</div></div>
+    <div><div class="stat-num"><span>$</span>0</div><div class="stat-lbl">Costo de la cotización</div></div>
     <div><div class="stat-num">100<span>%</span></div><div class="stat-lbl">Trazabilidad digital</div></div>
     <div><div class="stat-num">24<span>h</span></div><div class="stat-lbl">Tiempo de respuesta</div></div>
   </div>
@@ -365,8 +396,42 @@ footer p{font-size:13px;color:rgba(255,255,255,.3);}
   </div>
 </section>
 
+<section id="preguntas">
+  <div class="section-inner">
+    <div class="section-tag">Preguntas frecuentes</div>
+    <h2 class="section-title">Resolvemos tus dudas antes de empezar</h2>
+    <p class="section-sub">Lo que más nos preguntan quienes nos contactan por primera vez.</p>
+    <div class="faq-list">
+      <details>
+        <summary>¿La cotización tiene algún costo?</summary>
+        <p>No. Evaluamos tu necesidad y te enviamos una cotización formal con alcance y condiciones en menos de 24 horas, sin costo y sin compromiso.</p>
+      </details>
+      <details>
+        <summary>¿Atienden solo empresas o también personas naturales?</summary>
+        <p>Atendemos empresas, conjuntos residenciales y personas naturales. El proceso es el mismo: cotización formal, orden de servicio y entrega documentada.</p>
+      </details>
+      <details>
+        <summary>¿En qué zonas prestan sus servicios?</summary>
+        <p>Prestamos servicios en Colombia: bodegas, puertos, plantas industriales, conjuntos residenciales, parqueaderos y más. Escríbenos con tu ubicación y te confirmamos la disponibilidad para tu zona.</p>
+      </details>
+      <details>
+        <summary>¿Emiten factura?</summary>
+        <p>Sí. Todo servicio termina con entrega firmada, evidencia fotográfica y factura. La trazabilidad de tu servicio queda documentada de principio a fin.</p>
+      </details>
+      <details>
+        <summary>¿Cómo queda documentado el servicio?</summary>
+        <p>Cada trabajo se ejecuta con una orden de servicio que registra el técnico asignado, la fecha y la dirección. Al finalizar recibes la entrega con firma y evidencia fotográfica.</p>
+      </details>
+      <details>
+        <summary>¿Ofrecen mantenimiento recurrente?</summary>
+        <p>Sí, con la línea de Soporte Mensual: mantenimiento programado, visitas preventivas periódicas, soporte prioritario y un reporte mensual de estado.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="cta-section" id="contacto">
-  <h2>¿Necesitas un servicio para tu empresa o conjunto?</h2>
+  <h2>¿Necesitas un servicio de tecnología o consultoría?</h2>
   <p>Escríbenos y te enviamos una cotización formal en menos de 24 horas. Sin costo, sin compromiso.</p>
   <div class="cta-btns">
     <a href="https://wa.me/573148319544?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20TECYES%20y%20necesito%20cotizar%20un%20servicio%20para%20mi%20empresa%20o%20conjunto." class="btn-whatsapp">
@@ -374,6 +439,7 @@ footer p{font-size:13px;color:rgba(255,255,255,.3);}
       Escribir por WhatsApp
     </a>
   </div>
+  <p class="cta-phone">O llámanos directamente: <a href="tel:+573148319544">+57 314 831 9544</a></p>
   <div class="contact-form-card">
     <form action="https://formspree.io/f/mzblroje" method="POST" id="contactForm">
       <input type="hidden" name="_subject" value="Nuevo contacto desde la web - TECYES">
@@ -412,6 +478,7 @@ footer p{font-size:13px;color:rgba(255,255,255,.3);}
     </a>
   </div>
   <p>TECYES &middot; Tecnología y Consultoría &middot; Colombia &middot; 2026</p>
+  <p class="footer-contact"><a href="tel:+573148319544">+57 314 831 9544</a> &middot; <a href="mailto:tecyes.sas@gmail.com">tecyes.sas@gmail.com</a></p>
 </footer>
 
 <a href="https://wa.me/573148319544?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20TECYES%20y%20necesito%20cotizar%20un%20servicio." class="wa-float" aria-label="WhatsApp">
